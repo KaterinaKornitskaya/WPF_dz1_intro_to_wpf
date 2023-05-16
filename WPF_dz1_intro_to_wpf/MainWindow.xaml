@@ -1,0 +1,59 @@
+﻿<Window x:Class="WPF_dz1_intro_to_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_dz1_intro_to_wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!--делим окно на две строки-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--в первую строку добавляем label Names-->
+        <Label Margin="10,10,0,0">Names</Label>
+
+
+        <!--работаем со второй строкой-->
+        <Grid Grid.Row="1">
+            <!--вторую строку делим на две колонки-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--в первую колонку добавляем ListBox-->
+            <ListBox Grid.Column="0" Name="myListBox" Margin="10,10" 
+                     Background="Beige"/>
+
+            <!--во вторую колонку добавляем элементы: текст.поле и кнопки-->
+            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top">
+                <TextBox x:Name="txtBox1" Padding="5" Margin="10,10,10,5"/>
+                <Button x:Name="buttonAddName" Padding="5" Margin="10,5" 
+                        Background="Aquamarine" Click="buttonAddName_Click">
+                    <!--закругленный углы кнопки-->
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                    Add Name
+                </Button>
+
+                <Button x:Name="buttonClearAll" Padding="5" Margin="10,5" 
+                        Background="Coral" Click="buttonClearAll_Click">
+                    <!--закругленный углы кнопки-->
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                    Clear All
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
