@@ -28,7 +28,7 @@ namespace WPF_dz1_intro_to_wpf
         // обработка клика по кнопке AddName
         private void buttonAddName_Click(object sender, RoutedEventArgs e)
         {
-            myListBox.Items.Add(txtBox1.Text);  // добавляем в список текст из текстюполя
+            myListBox.Items.Add(txtBox1.Text);  // добавляем в список текст из текст.поля
             txtBox1.Text = string.Empty;        // очищаем текстовое поле
         }
 
